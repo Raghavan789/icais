@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICSDAI 2024</title>
+    <style>
+    
+
+.navbar.scrolled {
+    background-color: #006DBF;
+    color: white;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.brand {
+    font-size: 24px;
+    background-color: #006DBF;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+}
+
+.brand a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 15px;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    padding: 2px 5px;
+    transition: color 0.3s, background-color 0.3s;
+    font-size: 14px;
+}
+
+.navbar.scrolled .nav-links a {
+    color: white;
+}
+
+.nav-links a:hover {
+    color: white;
+    background-color: #006DBF;
+}
+
+.nav-links .arrow {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    min-width: 200px;
+    z-index: 1;
+    margin-top: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #006DBF;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 753px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        margin-top: 0;
+    }
+
+    .dropdown-content a {
+        padding-left: 30px;
+    }
+}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .navbar {
+            background-color: #006DBF;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .navbar a {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: justify;
+            font-size: 16px;
+            font-weight: normal;
+        }
+        .section-title {
+            font-size: 24px;
+            margin-top: 40px;
+            margin-bottom: 10px;
+            text-align: left;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #006DBF;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+        .important-dates {
+            margin-top: 40px;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+        }
+        .important-dates table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #f9f9f9;
+        }
+        .important-dates th, .important-dates td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .important-dates th {
+            background-color: #006DBF;
+            color: #fff;
+            font-weight: bold;
+        }
+        .important-dates tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .center-content {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .center-content a {
+            color: #006DBF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .center-content a:hover {
+            text-decoration: underline;
+        }
+        .gradient-line {
+            height: 3px;
+            background: linear-gradient(to right, #000, rgba(0, 0, 0, 0));
+            margin: 20px 0;
+        }
+        .conference-tracks-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.track-box {
+    width: 48%;
+    border: 2px solid #006DBF;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.track-box h3 {
+    color: #006DBF;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.track-box ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.track-box li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+.track-box li:before {
+    content: "•";
+    color: #006DBF;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+.conference-tracks-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+}
+.track-box {
+    width: calc(50% - 10px);
+    border: 2px solid #006DBF;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.track-box h3 {
+    color: #006DBF;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.track-box ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.track-box li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+.track-box li:before {
+    content: "•";
+    color: #006DBF;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.footer {
+            background-color: #f2f2f2;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .footer {
+            background-color: #006DBF;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+            line-height: 1.5;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        
+        .footer {
+            background-color: #006DBF;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+            line-height: 1.5;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer p {
+            margin: 0 0 20px 0;
+        }
+        @media screen and (max-width: 768px) {
+    .content {
+        padding: 10px;
+    }
+
+    .navbar a {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .important-dates {
+        padding: 10px;
+    }
+
+    .important-dates th, .important-dates td {
+        padding: 5px;
+    }
+
+    .conference-tracks-container {
+        flex-direction: column;
+    }
+
+    .track-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar a {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .important-dates th, .important-dates td {
+        font-size: 14px;
+    }
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.navbar {
+    background-color: #006DBF;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar a {
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: justify;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/* ... (keep the rest of the CSS as is) ... */
+
+.footer {
+    background-color: #006DBF;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+    line-height: 1.5;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer p {
+    margin: 0 0 20px 0;
+}
+.content {
+    width: 100%;
+    text-align: justify;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #006DBF;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+.important-dates {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.important-dates table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+}
+
+.important-dates th, .important-dates td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+.conference-tracks-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.track-box {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 250px;
+    border: 2px solid #006DBF;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.footer {
+    background-color: #006DBF;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.5;
+}
+@media screen and (max-width: 768px) {
+    .track-box {
+        flex: 1 1 100%;
+    }
+    
+    .navbar a {
+        font-size: 20px;
+    }
+    
+    .section-title {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar a {
+        font-size: 18px;
+    }
+    
+    .section-title {
+        font-size: 20px;
+    }
+    
+    .important-dates th, .important-dates td {
+        font-size: 14px;
+    }
+}
+    </style>
+</head>
+<body>
+   
+    <div class="navbar">
+        <a href="#">ICSDAI 2024 Call for Papers</a>
+    </div>
+    <!-- <nav class="navbar">
+        <div class="container">
+            <div class="brand" id="icais-brand"><a href="#home">ICAIS 2024</a></div>
+            <div class="menu-icon" onclick="toggleMenu()">
+                &#9776;
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li class="dropdown">
+                    <a href="#call-for-papers" class="dropbtn">CALL FOR PAPERS <span class="arrow">&#9662;</span></a>
+                    <div class="dropdown-content">
+                        <a href="#about">ABOUT ICAIS 2024</a>
+                        <a href="#important-dates">IMPORTANT DATES</a>
+                        <a href="#submission-guidelines">SUBMISSION GUIDELINES</a>
+                        <a href="#indexing">INDEXING</a>
+                        <a href="#conference-tracks">CONFERENCE TRACKS</a>
+                    </div>
+                </li>
+                <li><a href="#commities.html">COMMITTEES</a></li>
+                <li><a href="#registration">REGISTRATION</a></li>
+                <li><a href="#publication">PUBLICATION</a></li>
+                <li><a href="#sponsors">SPONSORS</a></li>
+                <li><a href="#special-sessions">SPECIAL SESSIONS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav> -->
+    <div class="content">
+        <p>With the intriguing development of technologies in several industries along with the advent of ac-crescent and ubiquitous computational resources, it creates an ample number of opportunities to develop innovative computational technologies in order to solve the wide range of uncertainties, imprecision, and vagueness issues in various real-life problems. Hybridizing modern computational techniques with traditional computing methods has attracted researchers and academicians to focus on developing innovative computational techniques. In the near future, computational techniques may provide underlying solutions by effectively using evolving technologies such as computer vision, Natural Language Processing, Deep Learning, Machine learning, scientific computing, and computational vision. As the huge number of intelligent computational algorithms are emerging along with the increasing computational power have significantly extended the potential of developing various intelligent applications.</p>
+
+        <p>The ICDSAI 2024 aims to bridge the gap between these non-coherent disciplines of data science and foster unified development in next-generation computational models for artificial intelligence.</p>
+
+        <p>Please consider submitting your works to this conference. We are interested in the entire range of concepts from theory to practice, including case studies, works-in-progress, and conceptual explorations.</p>
+
+        <div class="section-title">About the Conference</div>
+        <p>ICDSAI 2024 aims to provide a forum for researchers from both academia and industry to share their latest research contributions, future vision in the field, and potential impact across industries of Data Science and Artificial Intelligence.</p>
+
+        <p>Join us, 3-4 May 2024, to explore discovery, progress, and achievements related to various Data Science and Artificial Intelligence.</p>
+
+        <p>The ICDSAI 2024 will provide its attendees with an uncommon opportunity to expand their network beyond their immediate professional environment. It is a unique chance to work with other accomplished individuals from diverse areas towards the common goal of shaping the future of communication, computing, and society.</p>
+    </div>
+
+    <div class="important-dates">
+        <div class="section-title">Important Dates / Deadlines</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Event">Call For Papers</td>
+                    <td data-label="Date">December 01, 2023</td>
+                </tr>
+                <tr>
+                    <td data-label="Event">Submission (Final Extension)</td>
+                    <td data-label="Date">March 15, 2024</td>
+                </tr>
+                <tr>
+                    <td data-label="Event">Notification of Acceptance</td>
+                    <td data-label="Date">March 31, 2024</td>
+                </tr>
+                <tr>
+                    <td data-label="Event">Early Bird Registration</td>
+                    <td data-label="Date">April 25, 2024</td>
+                </tr>
+                <tr>
+                    <td data-label="Event">Oral Presentation of Selected Works</td>
+                    <td data-label="Date">May 29-30, 2024</td>
+                </tr>
+                <tr>
+                    <td data-label="Event">Submission of Full Papers</td>
+                    <td data-label="Date">July 31, 2024</td>
+                </tr>
+                <tr>
+                    <td data-label="Event">Publication (Tentative)</td>
+                    <td data-label="Date">May 31, 2025</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="content">
+    
+
+        <div class="section-title">Submission Guidelines</div>
+        
+        <p>Papers reporting original* and unpublished research results pertaining to the related topics are solicited. *(papers with plagiarism more than 30% will be outrightly rejected)</p>
+
+        <p>Full paper manuscripts must be in English of up to 07 pages as per format. For authors' convenience, Springer has summarized in the Author Guidelines document how a proceedings paper should be structured, how elements (headings, figures, references) should be formatted using our predefined styles, etc. The PDF of the Author Guidelines can be downloaded from the given link or as part of the zip files containing the complete sets of instructions and templates for the different text preparation systems.</p>
+
+        <p>Springer has developed LaTeX style files and Word templates to help prepare paper. LaTeX is the preferred format for texts containing several formulae, but Word templates are also available on the following link:</p>
+
+        <p><a href="https://www.springer.com/gp/authors-editors/conference-proceedings/conference-proceedings-guidelines" target="_blank">https://www.springer.com/gp/authors-editors/conference-proceedings/conference-proceedings-guidelines</a></p>
+
+        <p>Submissions should NOT include the author(s), affiliation(s), e-mail address(es), and postal address(es) in the manuscripts. Papers will be selected based on their originality, timeliness, significance, relevance, and clarity of presentation. Paper submission implies the intent of at least one of the authors to register and present the paper, if accepted.</p>
+
+        <div class="center-content">
+            <p>The ONLINE submission site is:</p>
+            <p><strong>SPRINGER OCS</strong><br>Click <a href="#">here</a>, to submit.</p>
+        </div>
+
+        <div class="section-title">Presentation through Virtual Platform</div>
+        <p>Amid prevailing conditions due to COVID19, a virtual meeting platform may be made available for all registered authors who intend to submit their work but are unable to attend the conference. Authors may register and present their paper through the virtual platform.</p>
+
+        <p>Authors shall be sent a Certificate of Participation, Conference Proceedings link, and relevant literature by mail.</p>
+        <br>
+        <hr class="gradient-line">
+
+        <div class="section-title">Acceptance & Publication</div>
+        <p>After a double-blind peer review, qualifying Regular Papers may be accepted as either Full Papers or Short Papers.</p>
+
+        <p>All accepted and presented papers of the conference will be reviewed for possible publication in SPRINGER. The papers must be part of the worldwide scholarly discourse in the field covered by the library. The reviews will be done to make sure papers are relevant for the chosen classifications to ensure subscribers receive relevant content. NO extra fee is charged from authors for inclusion in proceedings. Authors will grant a non-exclusive, revocable license that allows providing services to users.</p><br>
+        <hr class="gradient-line">
+
+        <!-- New section for Indexing -->
+        <div class="section-title">Indexing</div>
+        <p>Post-conference, proceedings will be made available to the following indexing services for possible inclusion:</p>
+        <ul>
+            <li><strong>ISI Conference Proceedings Citation Index - ISI Web of Science</strong></li>
+            <li><strong>Google Scholar</strong></li>
+            <li><strong>Scopus</strong></li>
+            <li><strong>DBLP</strong></li>
+        </ul>
+        <p>Depending on the focus of the particular indexing services, <strong>they may decide to include or not</strong>. If included one can expect it in 15-18 months. DBLP and Google Scholar are fast.</p>
+        <br>
+        <hr class="gradient-line">
+    </div>
+    <div class="section-title">Conference Tracks</div>
+<div class="conference-tracks-container">
+    <div class="track-box">
+        <h3>Data-Science</h3>
+        <ul>
+            <li><strong>Data Mining</strong></li>
+            <li><strong>Real-time data management in navigation and mobility</strong></li>
+            <li><strong>Data Integrity, Data Privacy and Security</strong></li>
+            <li><strong>Data Analytics and Modeling</strong></li>
+            <li><strong>Very Large Data Systems</strong></li>
+            <li><strong>Image processing and pattern recognition</strong></li>
+            <li><strong>Energy-Efficient Data Management Techniques</strong></li>
+            <li><strong>Database and Data warehouse</strong></li>
+            <li><strong>Computer Vision and Statistical Learning</strong></li>
+            <li><strong>Machine learning for Large DataSets</strong></li>
+            <li><strong>Big Data Analytics & Computing</strong></li>
+            <li><strong>Extreme Learning Machines</strong></li>
+            <li><strong>Hybrid Intelligent Systems</strong></li>
+        </ul>
+    </div>
+    <div class="track-box">
+        <h3>Artificial Intelligence Applications in Data Science</h3>
+        <ul>
+            <li><strong>Data Modeling & Semantic Engineering</strong></li>
+            <li><strong>Benefits of AI in Big Data Analytics</strong></li>
+            <li><strong>Volume Growth of AI in Metadata use and management</strong></li>
+            <li><strong>Managing Analytics of Big Data</strong></li>
+            <li><strong>High performance data mining algorithms</strong></li>
+            <li><strong>Ontologies and Knowledge sharing</strong></li>
+            <li><strong>Data Science Models and Approaches with AI</strong></li>
+            <li><strong>Hybrid Machine Learning Systems for Data Science</strong></li>
+            <li><strong>Machine Learning Recommender systems in Big Data</strong></li>
+            <li><strong>Scalable Computing Models, Theories, and Algorithms</strong></li>
+            <li><strong>Performance Evaluation Reports for Big Data Systems</strong></li>
+            <li><strong>Many-Core Computing and Accelerators</strong></li>
+            <li><strong>Analytics Reasoning and Sense-making on Big Data</strong></li>
+        </ul>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer-content">
+        <p>Disclaimer: This site is designed by Web Team @ IAASSE and the contents are provided by IAASSE.</p>
+        <br>
+        <p>Copyright ©2024. All trade marks and images are the property of their respective owners.</p>
+    </div>
+</footer>
+</body>
+</html>

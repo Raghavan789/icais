@@ -1,0 +1,230 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 2px;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar.scrolled {
+    background-color: #006DBF;
+    color: white;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.brand {
+    font-size: 24px;
+    background-color: #006DBF;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+}
+
+.brand a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 15px;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+    transition: color 0.3s, background-color 0.3s;
+    font-size: 14px;
+}
+
+.navbar.scrolled .nav-links a {
+    color: white;
+}
+
+.nav-links a:hover {
+    color: white;
+    background-color: #006DBF;
+}
+
+.nav-links .arrow {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    min-width: 200px;
+    z-index: 1;
+    margin-top: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #006DBF;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 753px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        margin-top: 0;
+    }
+
+    .dropdown-content a {
+        padding-left: 30px;
+    }
+}
+//marquee
+
+
+//slider one sechome
+//---------------------------------------------------------------------------------------------
+.slidu-container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slidu-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slidu-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slidu-slide img {
+    width: 100%;
+    display: block;
+}
+
+.slide-prev, .slide-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 16px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.slide-prev {
+    left: 0;
+}
+
+.slide-next {
+    right: 0;
+}
+
+.slide-prev:hover, .slide-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+//slidu images logos
+
+.slidu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.slidu-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
+}
+
+.slidu-image {
+    flex: 1;
+    max-width: 100%; /* Ensure images do not exceed container width */
+    min-width: 200px; /* Ensure a reasonable minimum size */
+    box-sizing: border-box;
+}
+
+.slidu-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    
+    nav {
+        background-color: #006DBF;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    nav h1 {
+        color: white;
+        margin: 0;
+        padding: 0;
+        font-size: 24px;
+    }
+    .registration-options {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    .option {
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        padding: 15px;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .option h3 {
+        margin-top: 0;
+        color: #006DBF;
+    }
+    .price {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+    .pay-button {
+        background-color: #006DBF;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .pay-button:hover {
+        background-color: #005499;
+    }
+    .registration-info {
+        text-align: center;
+        padding: 20px;
+        background-color: #f0f0f0;
+        margin: 20px;
+        border-radius: 8px;
+    }
+    .registration-info p {
+        margin: 10px 0 30px 0;
+    }
+    .registration-info p:first-child {
+        font-weight: bold;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 40px;
+        margin-bottom: 40px; 
+    }
+    table + p {
+    margin-top: 40px;
+}
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #006DBF;
+        color: white;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    .registration-includes {
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px;
+        text-align: left;
+    }
+
+    .registration-includes h3 {
+        color: #006DBF;
+        margin-top: 0;
+    }
+
+    .registration-includes ul {
+        padding-left: 20px;
+    }
+
+    .registration-includes li {
+        margin-bottom: 10px;
+    }
+
+    .registration-includes a {
+        color: #006DBF;
+        text-decoration: none;
+    }
+
+    .registration-includes a:hover {
+        text-decoration: underline;
+    }
+    .important-info {
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px;
+        text-align: left;
+    }
+
+    .important-info h3 {
+        color: #006DBF;
+        margin-top: 0;
+    }
+
+    .important-info ul {
+        padding-left: 20px;
+    }
+
+    .important-info li {
+        margin-bottom: 10px;
+    }
+
+    .important-info strong {
+        color: #006DBF;
+    }
+
+    .virtual-presentation {
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px;
+        text-align: left;
+    }
+
+    .virtual-presentation h3 {
+        color: #006DBF;
+        margin-top: 0;
+    }
+
+    .virtual-presentation p {
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+    <nav>
+        <h1>Registration</h1>
+    </nav>
+    
+    <div class="registration-options">
+        <div class="option">
+            <h3>Full Time students (IAASSE Members) (India)</h3>
+            <div class="price">₹6,500</div>
+            <button class="pay-button">Pay</button>
+        </div>
+        <div class="option">
+            <h3>Full Time students (Non IAASSE Members) (India)</h3>
+            <div class="price">₹8,500</div>
+            <button class="pay-button">Pay</button>
+        </div>
+        <div class="option">
+            <h3>Faculty/ Research Scholars ( IAASSE members) India</h3>
+            <div class="price">₹8,500</div>
+            <button class="pay-button">Pay</button>
+        </div>
+        <div class="option">
+            <h3>Faculty/ Research Scholars ( Non IAASSE members) India</h3>
+            <div class="price">₹10,500</div>
+            <button class="pay-button">Pay</button>
+        </div>
+    </div>
+    <div class="registration-info">
+        <p><strong>The ICDSAI 2024 registration fees</strong> are as follows, and must be paid in the USD or local currency as per the current exchange rate.</p>
+        <p><strong>Important Dates and Registration Fees</strong></p>
+        <p><strong>Authors from India (Registration Fees is in INR)</strong></p>
+
+         
+        <table>
+            <tr>
+                <th>Category</th>
+                <th colspan="2">Early Bird: on or before May 25, 2024</th>
+                <th colspan="2">Regular Registration: May 26, 2024 - Till May 28, 2024</th>
+                <th colspan="2">Spot Registration: May 29, 2024</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>IAASSE Members</th>
+                <th>Non Members</th>
+                <th>IAASSE Members</th>
+                <th>Non Members</th>
+                <th>IAASSE Members</th>
+                <th>Non Members</th>
+            </tr>
+            <tr>
+                <td><strong>Full Time Students</strong></td>
+                <td>6500.00</td>
+                <td>8500.00</td>
+                <td>8500.00</td>
+                <td>10500.00</td>
+                <td>10500.00</td>
+                <td>12500.00</td>
+            </tr>
+            <tr>
+                <td><strong>Faculty/ Research Scholars</strong></td>
+                <td>8500.00</td>
+                <td>10500.00</td>
+                <td>10500.00</td>
+                <td>12500.00</td>
+                <td>12500.00</td>
+                <td>14500.00</td>
+            </tr>
+            <tr>
+                <td><strong>Industry</strong></td>
+                <td>10500.00</td>
+                <td>12500.00</td>
+                <td>12500.00</td>
+                <td>14500.00</td>
+                <td>14500.00</td>
+                <td>16500.00</td>
+            </tr>
+        </table>
+        
+        <p><strong>Authors Not from India (Registration Fees is in USD)</strong></p>
+        
+        <table>
+            <tr>
+                <th>Category</th>
+                <th colspan="2">Early Bird: on or before April 05, 2024</th>
+                <th colspan="2">Regular Registration: April 06, 2024 - Till April 10, 2024</th>
+                <th colspan="2">Spot Registration: April 24, 2024</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>IAASSE Members</th>
+                <th>Non Members</th>
+                <th>IAASSE Members</th>
+                <th>Non Members</th>
+                <th>IAASSE Members</th>
+                <th>Non Members</th>
+            </tr>
+            <tr>
+                <td><strong>Full Time Students</strong></td>
+                <td>75.00</td>
+                <td>100.00</td>
+                <td>100.00</td>
+                <td>125.00</td>
+                <td>125.00</td>
+                <td>145.00</td>
+            </tr>
+            <tr>
+                <td><strong>Faculty/ Research Scholars</strong></td>
+                <td>100.00</td>
+                <td>125.00</td>
+                <td>125.00</td>
+                <td>150.00</td>
+                <td>150.00</td>
+                <td>175.00</td>
+            </tr>
+            <tr>
+                <td><strong>Industry</strong></td>
+                <td>125.00</td>
+                <td>150.00</td>
+                <td>150.00</td>
+                <td>175.00</td>
+                <td>175.00</td>
+                <td>200.00</td>
+            </tr>
+        </table>
+        <div class="registration-includes">
+            <h3>Registration Includes</h3>
+            <ul>
+                <li>Two full days of expert insights from top-tier presenters.</li>
+                <li>Certificate of Participation OR Presentation of Paper for a registered person only</li>
+                <li>Inclusion in SPRINGER proceedings (PROMS), if paper accepted and presented in the conference.</li>
+                <li>To become IAASSE member please <a href="#">click here</a></li>
+            </ul>
+        </div>
+        <div class="important-info">
+            <h3>Important Information for Registration</h3>
+            <ul>
+                <li>The deadline for registration can be seen in the important dates. It is important that at least one author per accepted paper registers on or before the deadline.</li>
+                <li>Authors registration includes the submission of up to ten (10) pages for full paper.</li>
+                <li>M. Tech./B. Tech./MCA students will be considered as Full-time Students.</li>
+                <li>Full-time Ph. D. Scholars will be considered as Research Scholars.</li>
+                <li>At least one author must register and need to attend the conference to present the paper in person or virtual mode.</li>
+                <li>Participants/Attendees/Listeners are also invited.</li>
+                <li>Certificate of presentation shall be issued only if the paper is presented either in person or through a virtual platform.</li>
+                <li>IAASSE Members must mention their membership UID during registration and submit a copy of the membership card during the conference.</li>
+                <li>Non IAASSE Members please enter the code "IAASSEICDSAI 2024" as Membership UID in the registration portal.</li>
+                <li><strong>In NO case, registration fee shall be refunded.</strong></li>
+            </ul>
+        </div>
+        <div class="virtual-presentation">
+            <h3>Presentation in Virtual Mode</h3>
+            <p>Amid prevailing conditions due to COVID19, a virtual meeting platform may be made available for all registered authors who intend to submit their work but are unable to attend the conference. Authors may register and present their paper through the virtual platform.</p>
+            <p>Authors shall be sent a Certificate of Participation, Conference Proceedings link and relevant literature by mail.</p>
+        </div>
+    </div>
+</body>
+</html>
